@@ -2,6 +2,11 @@ import * as React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
 import Image from 'next/image';
+import { Montserrat } from '@next/font/google';
+
+export const font = Montserrat({
+  subsets: ['latin'],
+});
 
 export default function Header() {
   return (
@@ -15,6 +20,7 @@ export default function Header() {
               width="200"
               height="53"
               priority
+              className={styles.logoImage}
             />
             {/* <img
               width="200"
@@ -25,10 +31,7 @@ export default function Header() {
           </Link>
         </div>
         <div className={styles.nav}>
-          <button type="button" className={styles.buttonToggleMenu}>
-            Menu
-          </button>
-          <ul id="nav" className={styles.navMobile}>
+          <ul id="nav" className={styles.navMobile + ' ' + font.className}>
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -46,6 +49,9 @@ export default function Header() {
             </li>
           </ul>
         </div>
+        <button type="button" className={styles.buttonToggleMenu}>
+          Menu
+        </button>
       </div>
     </>
   );
