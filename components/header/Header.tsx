@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Link from 'next/link';
-import styles from './header.module.scss';
+import * as React from "react";
+import Link from "next/link";
+import styles from "./header.module.scss";
 import { Montserrat } from "next/font/google";
-import logo from '/public/impress-logo.png';
-import Image from '@/components/Image';
+import logo from "/public/impress-logo.png";
+import Image from "@/components/Image";
 
 export const font = Montserrat({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export default function Header() {
@@ -32,7 +32,7 @@ export default function Header() {
           </Link>
         </div>
         <div className={styles.nav}>
-          <ul id="nav" className={styles.navMobile + ' ' + font.className}>
+          <ul id="nav" className={styles.navMobile + " " + font.className}>
             <li>
               <Link href="/">Home.</Link>
             </li>
