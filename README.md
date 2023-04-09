@@ -36,3 +36,51 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Image Component
+
+You can use the same syntax of [next/image](https://nextjs.org/docs/api-reference/next/image) with static export.
+
+Example:
+
+```ts
+import Image from '../components/Image'
+import example1 from '../public/example1.png'
+
+const Home: React.FC = () => {
+  return (
+    <Image src={example} alt="Example 1" />
+    <Image src="/example2.png" width={600} height={400} alt="Example 2" />
+  )
+}
+
+export default Home
+```
+
+Note: If you want to deploy the project to Vercel, remove the custom loader from `next.config.js` and `components/Image.tsx`.
+
+`next.config.js`
+
+```diff
+ ...
+-  images: {
+-    loader: 'custom',
+-    path: '/',
+-  },
+ ...
+```
+
+`components/Image.tsx`
+
+```diff
+ ...
+-const customLoader = ({ src }: { src: string }) => {
+-  return src
+-}
+
+ const Image = (props: ImageProps) => {
+-  return <NextImage {...props} loader={customLoader} />
++  return <NextImage {...props} />
+ }
+ ...
+```

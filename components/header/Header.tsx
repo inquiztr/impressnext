@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
-import Image from 'next/image';
 import { Montserrat } from '@next/font/google';
+import logo from '/public/impress-logo.png';
+import Image from '@/components/Image';
 
 export const font = Montserrat({
   subsets: ['latin'],
@@ -15,7 +16,7 @@ export default function Header() {
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src="/impress-logo.png"
+              src={logo}
               alt="Impressionable Gifts1"
               width="200"
               height="53"
@@ -25,7 +26,7 @@ export default function Header() {
             {/* <img
               width="200"
               height="53"
-              src="/impress-logo.png"
+              src={logo}
               alt="Impressionable Gifts"
             /> */}
           </Link>
@@ -33,7 +34,7 @@ export default function Header() {
         <div className={styles.nav}>
           <ul id="nav" className={styles.navMobile + ' ' + font.className}>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/">Home.</Link>
             </li>
             <li>
               <Link href="/news">News</Link>
