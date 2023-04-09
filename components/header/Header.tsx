@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from "next/font/google";
 import logo from '/public/impress-logo.png';
 import Image from '@/components/Image';
 
