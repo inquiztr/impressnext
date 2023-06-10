@@ -23,12 +23,6 @@ export default function Header() {
               priority
               className={styles.logoImage}
             />
-            {/* <img
-              width="200"
-              height="53"
-              src={logo}
-              alt="Impressionable Gifts"
-            /> */}
           </Link>
         </div>
         <div className={styles.nav}>
