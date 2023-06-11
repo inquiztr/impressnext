@@ -4,7 +4,7 @@ import Image from 'next/image';
 function Hero() {
   return (
     <>
-      <div className={styles.hero}>
+      <div id="hero" className={styles.hero}>
         <div className={styles.heroImage}>
           <Image
             src="/impress-logo2.png"
@@ -14,7 +14,7 @@ function Hero() {
             priority
           />
         </div>
-        <h1>Hero</h1>
+        <h1>Hero1</h1>
       </div>
     </>
   );
